@@ -1,0 +1,126 @@
+[gd_scene load_steps=12 format=3 uid="uid://1rroiy1e2o1a"]
+
+[ext_resource type="Script" uid="uid://dpc13pfn57vpl" path="res://starsky.gd" id="1_vtvjh"]
+[ext_resource type="Texture2D" uid="uid://ccvg3bckovunp" path="res://Planets/Sprites/01_alfey.png" id="2_f5ibs"]
+[ext_resource type="Script" uid="uid://dc3ojowtjd2qe" path="res://PlanetManager.gd" id="2_xfuas"]
+[ext_resource type="Texture2D" uid="uid://duwv8f2berakq" path="res://Planets/Sprites/02_liria.png" id="3_xfuas"]
+[ext_resource type="Script" uid="uid://rugnk5e7kicl" path="res://planet.gd" id="4_dkkq7"]
+[ext_resource type="Texture2D" uid="uid://4wk224vwl5k6" path="res://Planets/Sprites/03_kseron.png" id="4_t54dm"]
+[ext_resource type="Texture2D" uid="uid://byhx0na4pw63d" path="res://Planets/Sprites/04_okeania.png" id="5_dkkq7"]
+[ext_resource type="Texture2D" uid="uid://cirq46kufh54j" path="res://Planets/Sprites/05_tenebris.png" id="6_y60gm"]
+[ext_resource type="Texture2D" uid="uid://vrfv4mukocwg" path="res://Planets/Sprites/06_ateria.png" id="7_4hkif"]
+[ext_resource type="Texture2D" uid="uid://pw0bvts70nnw" path="res://Planets/Sprites/07_solaris.png" id="8_kwv8b"]
+[ext_resource type="Script" uid="uid://l1t2utqhpdnw" path="res://DiscriptionPanel.gd" id="11_dkkq7"]
+
+[node name="Starsky" type="Node2D"]
+position = Vector2(17, 16)
+script = ExtResource("1_vtvjh")
+
+[node name="Starsky" type="CanvasLayer" parent="."]
+
+[node name="Planets" type="Control" parent="Starsky"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_xfuas")
+
+[node name="01Alfey" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(119.000015, 73.00001)
+scale = Vector2(0.105468765, 0.105468765)
+texture = ExtResource("2_f5ibs")
+script = ExtResource("4_dkkq7")
+planet_name = "Алфей"
+
+[node name="02Liria" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(267, 225)
+scale = Vector2(0.12084963, 0.12084963)
+texture = ExtResource("3_xfuas")
+script = ExtResource("4_dkkq7")
+planet_id = 2
+planet_name = "Лирия"
+
+[node name="03Kseron" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(144, 544)
+scale = Vector2(0.10571288, 0.10571288)
+texture = ExtResource("4_t54dm")
+script = ExtResource("4_dkkq7")
+planet_id = 3
+planet_name = "Ксерон"
+
+[node name="04Okeania" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(993.99994, 152)
+scale = Vector2(0.26171875, 0.26171875)
+texture = ExtResource("5_dkkq7")
+script = ExtResource("4_dkkq7")
+planet_id = 4
+planet_name = "Океания"
+
+[node name="05Tenebris" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(1004, 518)
+scale = Vector2(0.1342773, 0.1342773)
+texture = ExtResource("6_y60gm")
+script = ExtResource("4_dkkq7")
+planet_id = 5
+planet_name = "Тенебрис"
+
+[node name="06Ateria" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(703, 79)
+scale = Vector2(0.12353513, 0.12353513)
+texture = ExtResource("7_4hkif")
+script = ExtResource("4_dkkq7")
+planet_id = 6
+planet_name = "Атерия"
+
+[node name="07Solaris" type="Sprite2D" parent="Starsky/Planets"]
+position = Vector2(644, 537)
+scale = Vector2(0.11328126, 0.10353167)
+texture = ExtResource("8_kwv8b")
+script = ExtResource("4_dkkq7")
+planet_id = 7
+planet_name = "Соларис"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+custom_minimum_size = Vector2(600, 150)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.455
+anchor_right = 0.5
+anchor_bottom = 0.455
+offset_left = -575.0
+offset_top = 165.16
+offset_right = 575.0
+offset_bottom = 351.16
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_dkkq7")
+
+[node name="Title" type="RichTextLabel" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_right = 0.503
+offset_left = -193.45001
+offset_top = 1.0
+offset_right = 192.54999
+offset_bottom = 47.0
+
+[node name="DiscriptionText" type="RichTextLabel" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_right = 0.503
+offset_left = -193.45001
+offset_top = 1.0
+offset_right = 192.54999
+offset_bottom = 47.0
+
+[node name="CloseBtn" type="Button" parent="UI/Panel"]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 33.0
+text = "Х"
